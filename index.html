@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data: blob:; font-src 'self'; media-src 'self' data: blob:; connect-src 'self' data: blob:; worker-src 'self' blob:; manifest-src 'self'; form-action 'none'; base-uri 'none'; object-src 'none'">
+<meta name="referrer" content="no-referrer">
+<title>Emoji Search — Find &amp; Copy Any Emoji Fast (English + Arabic) | S3eidat Tools</title>
+<meta name="description" content="Search 1,250+ emoji by name or keyword in English or Arabic, browse by category, pick a skin tone and copy with one click. Code points and HTML entities included. Works offline.">
+<meta property="og:title" content="Emoji Search — find and copy any emoji fast">
+<meta property="og:description" content="Search emoji in English or Arabic, pick a skin tone, click to copy. Runs in your browser.">
+<meta property="og:image" content="screenshot.png">
+<link rel="icon" href="kit/icon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="kit/kit.css">
+<link rel="stylesheet" href="app.css">
+<script src="kit/kit.js"></script>
+</head>
+<body data-tool="emoji-search">
+<main class="s3-main">
+  <section class="s3-hero">
+    <h1>Emoji Search</h1>
+    <p>Find any emoji by name or keyword, in English or Arabic, and copy it with one click. Your recent picks are remembered on this device.</p>
+  </section>
+
+  <section class="card es-top">
+    <div class="es-searchrow">
+      <label class="sr" for="q">Search emoji</label>
+      <input type="search" class="input es-q" id="q" dir="auto" autocomplete="off" spellcheck="false" placeholder="Search: heart, party, cat, قلب، شكرا…">
+      <div class="es-tones" id="tones" role="group" aria-label="Skin tone"></div>
+    </div>
+    <div class="es-cats mt" id="cats" role="group" aria-label="Category"></div>
+  </section>
+
+  <div class="es-layout mt">
+    <section class="card">
+      <div class="row between">
+        <h2 id="title">All emoji</h2>
+        <span class="faint" id="count"></span>
+      </div>
+      <div class="es-grid" id="grid" role="list"></div>
+      <div class="empty" id="empty" hidden><b>No emoji found</b>Try a shorter word, or another language.</div>
+    </section>
+
+    <aside class="card es-detail" id="detail" aria-live="polite">
+      <div class="es-big" id="big">😀</div>
+      <b class="es-name" id="dname">grinning face</b>
+      <p class="faint es-kw" id="dkw"></p>
+      <div class="es-codes">
+        <div><span class="faint">Code points</span><code id="dcp"></code></div>
+        <div><span class="faint">HTML</span><code id="dhtml"></code></div>
+      </div>
+      <div class="stack es-btns">
+        <button class="btn primary" id="cEmoji"><svg class="i"><use href="#i-copy"/></svg>Copy emoji</button>
+        <div class="row">
+          <button class="btn small grow" id="cCode">Copy U+</button>
+          <button class="btn small grow" id="cHtml">Copy HTML</button>
+        </div>
+      </div>
+      <p class="faint es-tip">Click any emoji to copy it. <kbd>/</kbd> to search, <kbd>Enter</kbd> copies the first match, arrow keys move around.</p>
+    </aside>
+  </div>
+</main>
+<script src="data.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
